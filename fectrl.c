@@ -49,7 +49,7 @@
 #include <string.h>
 #include <time.h>
 
-#include "cpcbioscall.h"
+#include "ldosbioscall.h"
 #include "gui_utils.h"
 #include "cfg_file.h"
 #include "fat_opts.h"
@@ -225,7 +225,8 @@ int media_init()
 
 	last_setlbabase=0xFFFFFF00;
 
-	cfg_disk_drive((unsigned char *)&fpcfgbuffer);
+	//PSKI Commented this out because I don't believe we need any special config
+	//cfg_disk_drive((unsigned char *)&fpcfgbuffer);
 
 
 	ret=Floprd((unsigned char*)&sector, floppydrive, 0, 255, 1 );

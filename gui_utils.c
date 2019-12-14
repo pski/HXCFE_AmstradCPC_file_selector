@@ -3,7 +3,7 @@
 #include <string.h>
 
 #include "gui_utils.h"
-#include "cpcbioscall.h"
+#include "ldosbioscall.h"
 
 extern char temp_buffer[257];
 
@@ -124,7 +124,7 @@ void show_parameters(void)
 
 void hxc_fastprintf(unsigned char x_pos,unsigned char y_pos, char *string)
 {
-	fastPrintString( 0xC000 + (y_pos*80) + x_pos, string );
+	fastPrintString( 0x3C00 + (y_pos*64) + x_pos, string );
 }
 
 void hxc_printf( unsigned char x_pos, unsigned char y_pos, char *chaine, ...)
